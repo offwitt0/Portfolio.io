@@ -13,8 +13,8 @@
 
 
 /*****---------------------------------------- 1) font-family: 'Rajdhani', sans-serif;
- 2) font-family: 'Poppins', sans-serif;
- ----------------------------------------*****/
+2) font-family: 'Poppins', sans-serif;
+----------------------------------------*****/
 
 
 /*--------------------------------------------------------------------- import Files ---------------------------------------------------------------------*/
@@ -162,7 +162,7 @@ img {
     height: auto;
 }
 
- :focus {
+:focus {
     outline: 0;
 }
 
@@ -1134,4 +1134,48 @@ textarea#comment.massage-bt::placeholder {
     #copyright ul li:first-child {
         margin-top: 0;
     }
+}
+
+/* Position the navbar-toggler button in the top-right */
+.navbar-toggler {
+    position: absolute;
+    top: 10px; /* Distance from the top */
+    right: 10px; /* Distance from the right */
+    border: none; /* Remove default border */
+    background-color: transparent; /* Make background transparent */
+    padding: 8px 10px; /* Adjust padding for better spacing */
+    border-radius: 5px; /* Add rounded corners */
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+.navbar-toggler-icon {
+    background-image: none; /* Remove default icon */
+    width: 30px; /* Adjust width */
+    height: 3px; /* Adjust height */
+    background-color: #3e412d; /* Custom color for the icon (white in this case) */
+    position: relative; /* Allow positioning of bars */
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+    content: '';
+    background-color: #3e412d; /* Same color as the navbar-toggler-icon */
+    position: absolute;
+    width: 30px;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-toggler-icon::before {
+    top: -8px; /* Position top bar */
+}
+
+.navbar-toggler-icon::after {
+    bottom: -8px; /* Position bottom bar */
+}
+
+/* Change color when the navbar-toggler button is focused or hovered */
+.navbar-toggler:focus,
+.navbar-toggler:hover {
+    background-color: #f8ca29; /* Yellow background on hover/focus */
 }
