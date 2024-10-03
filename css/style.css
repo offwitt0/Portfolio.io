@@ -1047,7 +1047,7 @@ textarea#comment.massage-bt::placeholder {
     border-radius: 8px; /* Optional: rounded corners */
     background-color: #000;
     position: absolute; /* Position absolutely */
-    top: 92%; /* Center vertically */
+    top: 90%; /* Center vertically */
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Adjust position to center */
     z-index: 10; /* Ensures it appears above other content */
