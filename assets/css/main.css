@@ -187,6 +187,44 @@ input, select, textarea {
 		letter-spacing: 0.075em;
 		text-transform: uppercase;
 		margin: 0 0 1rem 0;
+		background: linear-gradient(90deg, #f1c232 0%, #d4a31a 25%, #f1c232 50%, #d4a31a 75%, #f1c232 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		animation: gradient-text 4s ease-in-out infinite, text-move 6s ease-in-out infinite;
+		display: inline-block;
+	}
+
+	@keyframes gradient-text {
+		0% {
+			background-position: 0% 50%;
+		}
+		25% {
+			background-position: 25% 50%;
+		}
+		50% {
+			background-position: 50% 50%;
+		}
+		75% {
+			background-position: 75% 50%;
+		}
+		100% {
+			background-position: 100% 50%;
+		}
+	}
+
+	@keyframes text-move {
+		0%, 100% {
+			transform: translateX(0) rotate(0deg);
+		}
+		25% {
+			transform: translateX(5px) rotate(2deg);
+		}
+		50% {
+			transform: translateX(-5px) rotate(-2deg);
+		}
+		75% {
+			transform: translateX(5px) rotate(2deg);
+		}
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -4683,6 +4721,53 @@ input, select, textarea {
 
 	}
 
+	.holographic-container {
+		position: relative;
+		overflow: hidden;
+		border-radius: 10px;
+		transition: all 0.5s ease;
+		cursor: pointer;
+		display: inline-block;
+	}
+
+	.holographic-container::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(
+			45deg,
+			rgba(241, 194, 50, 0.3),
+			rgba(241, 194, 50, 0.1) 50%,
+			rgba(241, 194, 50, 0.3)
+		);
+		transform: rotate(0deg);
+		transition: all 0.5s ease;
+		opacity: 0;
+		z-index: 2;
+	}
+
+	.holographic-container:hover {
+		transform: scale(1.05);
+		box-shadow: 0 0 20px rgba(241, 194, 50, 0.5);
+		animation: image-shine 3s ease-in-out infinite;
+	}
+
+	.holographic-container:hover::before {
+		opacity: 1;
+		transform: rotate(45deg) translateY(100%);
+	}
+
+	@keyframes image-shine {
+		0%, 100% {
+			box-shadow: 0 0 20px rgba(241, 194, 50, 0.5);
+		}
+		50% {
+			box-shadow: 0 0 40px rgba(241, 194, 50, 0.8);
+		}
+	}
 
 	.logoup {
 		position: absolute;
@@ -4696,6 +4781,9 @@ input, select, textarea {
 	}
 	
 	.logoup:hover {
+		transform: scale(1.2) rotate(10deg);
+		box-shadow: 0 0 10px rgba(255, 251, 1, 0.966);
+	}logoup:hover {
 		transform: scale(1.2) rotate(10deg);
 		box-shadow: 0 0 10px rgba(255, 251, 1, 0.966);
 	}
